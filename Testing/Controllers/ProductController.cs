@@ -13,6 +13,7 @@ public class ProductController : Controller
     
     public IActionResult Index()
     {
-        return View();
+        var products = repo.GetAllProducts();
+        return View(products);
     }
 }
