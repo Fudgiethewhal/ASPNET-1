@@ -4,7 +4,13 @@ namespace Testing.Controllers;
 
 public class ProductController : Controller
 {
-    // GET
+        private readonly IProductRepository repo;
+
+        public ProductController(IProductRepository repo)
+        {
+            this.repo = repo;
+        }
+    
     public IActionResult Index()
     {
         return View();
