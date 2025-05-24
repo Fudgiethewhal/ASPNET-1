@@ -33,4 +33,10 @@ public class ProductController : Controller
         }
         return View(prod);
     }
+    public IActionResult UpdateProductToDatabase(Product product)
+    {
+        repo.UpdateProduct(product);
+
+        return RedirectToAction("ViewProduct", new { id = product.ProductID });
+    }
 }
